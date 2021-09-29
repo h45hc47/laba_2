@@ -13,24 +13,29 @@ void vowels_count(char* str) {
 
         ch = str[i];
 
-        if (ch == 'a' || ch == 'e'
-            || ch == 'i' || ch == 'o'
-            || ch == 'u' || ch == 'A'
-            || ch == 'E' || ch == 'I'
-            || ch == 'O' || ch == 'U')
+        if (ch == 'A' || ch == 'a'
+            || ch == 'E' || ch == 'e'
+            || ch == 'I' || ch == 'i'
+            || ch == 'O' || ch == 'o'
+            || ch == 'U' || ch == 'u')
             vowels++;
     }
 
-    printf("Vowels: %d", vowels);
+    printf("Vowels: %d\n\n", vowels);
 }
 
 
 int main() {
-    char str[256];
+    int i;
+    char* strings[3] = { "Who knew, who is who",
+                        "A penny saved is a penny gained",
+                        "A good beginning makes a good ending" };
 
-    fgets(str, sizeof(str), stdin);
-
-    vowels_count(str);
+    for (i = 0; i != 3; i++) {
+        puts(strings[i]);
+        vowels_count(strings[i]);
+    }
+    
 
     return 0;
 }
